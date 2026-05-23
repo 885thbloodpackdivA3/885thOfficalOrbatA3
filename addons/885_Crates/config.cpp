@@ -1133,6 +1133,11 @@ class CfgVehicles
 				name = "ToolKit";
 				count = 4;
 			};
+			class _xx_885th_DC17M
+			{
+				name = "885th_DC17M";
+				count = 1;
+			};
 			class _xx_885th_dc15sa_pistol_mag_blue
 			{
 				name = "885th_dc15sa_pistol_mag_blue";
@@ -1202,6 +1207,11 @@ class CfgVehicles
 			{
 				name = "bacta_nade";
 				count = 50;
+			};
+			class _xx_GW_BactaPack
+			{
+				name = "GW_BactaPack";
+				count = 10;
 			};
 			class _xx_kat_chestSeal
 			{
