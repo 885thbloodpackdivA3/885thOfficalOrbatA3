@@ -15,6 +15,7 @@ class CfgPatches
 				"885_mortar",
 				"885_grenadier",
 				"885_rocket",
+				"885_kusak",
 				"885_arsenalGonk",
 			};
 		weapons[] = {};
@@ -541,6 +542,26 @@ class CfgVehicles
 				name = "885th_DC15LEMKII_He_Battery_Blue";
 				count = 20;
 			};
+			class _xx_885th_Westarm5mkii_Ap_cell_blue
+			{
+				name = "885th_Westarm5mkii_Ap_cell_blue";
+				count = 50;
+			};
+			class _xx_885th_DX36C_battery_yellow_high
+			{
+				name = "885th_DX36C_battery_yellow_high";
+				count = 50;
+			};
+			class _xx_3AS_FusionCutter_Magazine
+			{
+				name = "3AS_FusionCutter_Magazine";
+				count = 25;
+			};
+			class _xx_885th_DC15P_High_Blue
+			{
+				name = "885th_DC15P_High_Blue";
+				count = 25;
+			};
 			class _xx_JLTS_clone_comlink
 			{
 				name = "JLTS_clone_comlink";
@@ -550,6 +571,11 @@ class CfgVehicles
 			{
 				name = "SquadShieldMagazine";
 				count = 5;
+			};
+			class _xx_ShieldGrenade_Mag
+			{
+				name ="ShieldGrenade_Mag";
+				count = 10;
 			};
 			class _xx_IDA_grenade_Detonator_mag
 			{
@@ -1078,6 +1104,238 @@ class CfgVehicles
 			class _xx_3AS_8Rnd_82mm_Mo_Flare_Red
 			{
 				name = "3AS_8Rnd_82mm_Mo_Flare_Red";
+				count = 10;
+			};
+			class _xx_885th_Republic_Mortar_Bag
+			{
+				name = "885th_Republic_Mortar_Bag";
+				count = 10;
+			};
+		};
+	};
+
+	class 885_kusak : 885_box {
+		ace_dragging_ignoreWeightCarry = 1;
+		displayName = "Kusak Supply Box";
+		scope = 2;
+		scopeCurator = 2;
+		hiddenSelections[] = {
+			"camo1"
+		};
+		hiddenSelectionsTextures[] =
+		{
+			"885_Crates\textures\Kusak_supply_crate_co.paa"
+		};
+		class TransportItems
+		{
+			class _xx_ToolKit
+			{
+				name = "ToolKit";
+				count = 4;
+			};
+			class _xx_885th_dc15sa_pistol_mag_blue
+			{
+				name = "885th_dc15sa_pistol_mag_blue";
+				count = 20;
+			};
+			class _xx_885_dc_cell_AP
+			{
+				name = "885_dc_cell_AP";
+				count = 50;
+			};
+			class _xx_885_dc_cell_sniper
+			{
+				name = "885_dc_cell_sniper";
+				count = 20;
+			};
+			class _xx_885th_RC_AAD
+			{
+				name = "885th_RC_AAD";
+				count = 20;
+			};
+			class _xx_IDA_BactaBandage
+			{
+				name = "IDA_BactaBandage";
+				count = 50;
+			};
+			class _xx_ACE_painkillers
+			{
+				name = "ACE_painkillers";
+				count = 20;
+			};
+			class _xx_ACE_splint
+			{
+				name = "ACE_splint";
+				count = 20;
+			};
+			class _xx_ACE_tourniquet
+			{
+				name = "ACE_tourniquet";
+				count = 20;
+			};
+			class _xx_GW_Vasko250
+			{
+				name = "GW_Vasko250";
+				count = 30;
+			};
+			class _xx_GW_Vasko500
+			{
+				name = "GW_Vasko500";
+				count = 15;
+			};
+			class _xx_GW_Vasko1000
+			{
+				name = "GW_Vasko1000";
+				count = 10;
+			};
+			class _xx_JLTS_clone_comlink
+			{
+				name = "JLTS_clone_comlink";
+				count = 5;
+			};
+			class _xx_SquadShieldMagazine
+			{
+				name = "SquadShieldMagazine";
+				count = 5;
+			};
+			class _xx_bacta_nade
+			{
+				name = "bacta_nade";
+				count = 50;
+			};
+			class _xx_kat_chestSeal
+			{
+				name = "kat_chestSeal";
+				count = 20;
+			};
+			class _xx_kat_IO_FAST
+			{
+				name = "kat_IO_FAST";
+				count = 20;
+			};
+			class _xx_kat_IV_16
+			{
+				name = "kat_IV_16";
+				count = 20;
+			};
+			class _xx_kat_larynx
+			{
+				name = "kat_larynx";
+				count = 10;
+			};
+			class _xx_ACE_morphine
+			{
+				name = "ACE_morphine";
+				count = 25;
+			};
+			class _xx_ACE_epinepherine
+			{
+				name = "ACE_epinepherine";
+				count = 25;
+			};
+			class _xx_IDA_BattleStim
+			{
+				name = "IDA_BattleStim";
+				count = 25;
+			};
+			class _xx_GW_Stim_Perigen
+			{
+				name = "GW_Stim_Perigen";
+				count = 20;
+			};
+			class _xx_GW_Stim_Enkephalin
+			{
+				name = "GW_Stim_Enkephalin";
+				count = 20;
+			};
+			class _xx_GW_Stim_Kyrprax
+			{
+				name = "GW_Stim_Kyrprax";
+				count = 20;
+			};
+			class _xx_GW_Injector_Polybiotics
+			{
+				name = "GW_Injector_Polybiotics";
+				count = 20;
+			};
+			class _xx_GW_Stim_Myocaine
+			{
+				name = "GW_Stim_Myocaine";
+				count = 20;
+			};
+			class _xx_kat_naloxone
+			{
+				name = "kat_naloxone";
+				count = 20;
+			};
+			class _xx_kat_Carbonate
+			{
+				name = "ACE_kat_Carbonate";
+				count = 25;
+			};
+			class _xx_IDA_Cauterizer
+			{
+				name = "IDA_Cauterizer";
+				count = 5;
+			};
+			class _xx_ACE_surgicalKit
+			{
+				name = "ACE_surgicalKit";
+				count = 5;
+			};
+			class _xx_kat_X_AED
+			{
+				name = "AED-X Series";
+				count = 2;
+			};
+			class _xx_IDA_grenade_Detonator_mag
+			{
+				name = "IDA_grenade_Detonator_mag";
+				count = 25;
+			};
+			class _xx_IDA_explosive_Detpack_mag
+			{
+				name = "IDA_explosive_Detpack_mag";
+				count = 15;
+			};
+			class _xx_IDA_explosive_Detpack2_mag
+			{
+				name = "IDA_explosive_Detpack2_mag";
+				count = 10;
+			};
+			class _xx_APERSMineDispenser_Mag
+			{
+				name = "APERSMineDispenser_Mag";
+				count = 4;
+			};
+			class _xx_HX_AT_Mine_Mag
+			{
+				name = "HX_AT_Mine_Mag";
+				count = 10;
+			};
+			class _xx_JLTS_explosive_emp_10_mag
+			{
+				name = "JLTS_explosive_emp_10_mag";
+				count = 15;
+			};
+			class _xx_JLTS_explosive_emp_20_mag
+			{
+				name = "JLTS_explosive_emp_20_mag";
+				count = 10;
+			};
+			class _xx_JLTS_explosive_emp_50_mag
+			{
+				name = "JLTS_explosive_emp_50_mag";
+				count = 5;
+			};
+			class _xx_ACE_Clacker
+			{
+				name = "ACE_Clacker";
+				count = 10;
+			};
+			class _xx_ACE_M26_Clacker
+			{
+				name = "ACE_M26_Clacker";
 				count = 10;
 			};
 		};
