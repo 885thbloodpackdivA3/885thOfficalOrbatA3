@@ -412,35 +412,90 @@ class CfgVehicles
 		};
 		class TransportItems
 		{
-			class _xx_885th_dc_cell_blue_pistol
+			class _xx_885th_dc17_cell
 			{
-				name = "885th_dc_cell_blue_pistol";
-				count = 10;
-			};
-			class _xx_885th_dc_cell_blue_pistol_extended
-			{
-				name= "885th_dc_cell_blue_pistol_extended";
-				count = 10;
-			};
-			class _xx_885th_Dc17s_Dual_Pistol_Mag
-			{
-				name = "885th_Dc17s_Dual_Pistol_Mag";
+				name = "885th_dc17_cell";
 				count = 15;
 			};
-			class _xx_885th_dc15sa_pistol_mag_blue
+			class _xx_885th_dc17_cell_extended
 			{
-				name = "885th_dc15sa_pistol_mag_blue";
+				name= "885th_dc17_cell_extended";
 				count = 15;
 			};
-			class _xx_885th_dc_cell_blue_high
+			class _xx_885th_dc17s_cell
 			{
-				name = "885th_dc_cell_blue_high";
+				name = "885th_dc17s_cell";
+				count = 15;
+			};
+			class _xx_885th_dc17s_cell_ap
+			{
+				name = "885th_dc17s_cell_ap";
+				count = 15;
+			};
+			class _xx_885th_dc17s_dual_cell
+			{
+				name = "885th_dc17s_dual_cell";
+				count = 15;
+			};
+			class _xx_885th_dc17s_dual_cell_ap
+			{
+				name = "885th_dc17s_dual_cell_ap";
+				count = 15;
+			};
+			class _xx_885th_dc15p_cell
+			{
+				name = "885th_dc15p_cell";
+				count = 15;
+			};
+			class _xx_885th_dc15sa_cell
+			{
+				name = "885th_dc15sa_cell";
+				count = 15;
+			};
+			class _xx_885th_dc21_cell
+			{
+				name = "885th_dc21_cell";
+				count = 15;
+			};
+			class _xx_885th_dc21_tracerless_cell
+			{
+				name = "885th_dc21_tracerless_cell";
+				count = 15;
+			};
+			class _xx_885th_westar35_cell
+			{
+				name = "885th_westar35_cell";
+				count = 15;
+			};
+			class _xx_885th_dc15s_cell
+			{
+				name = "885th_dc15s_cell";
+				count = 50;
+			};
+			class _xx_885th_dc15s_hp_cell
+			{
+				name = "885th_dc15s_hp_cell";
+				count = 30;
+			};
+			class _xx_885th_dc15s_ap_cell
+			{
+				name = "885th_dc15s_ap_cell";
 				count = 20;
 			};
-			class _xx_885th_dc_cell_blue
+			class _xx_885th_dc15se_cell
 			{
-				name = "885th_dc_cell_blue";
-				count = 50;
+				name = "885th_dc15se_cell";
+				count = 25;
+			};
+			class _xx_885th_dc19_cell
+			{
+				name = "885th_dc19_cell";
+				count = 30;
+			};
+			class _xx_885th_dc19_tracerless_cell
+			{
+				name = "885th_dc15se_cell";
+				count = 25;
 			};
 			class _xx_885th_dc_cell_blue_amp
 			{
@@ -522,10 +577,10 @@ class CfgVehicles
 				name = "885th_RC_AAD";
 				count = 20;
 			};
-			class _xx_885th_DC15BR_battery_blue
+			class _xx_885th_dc15br_cell
 			{
-				name = "885th_DC15BR_battery_blue";
-				count = 15;
+				name = "885th_dc15br_cell";
+				count = 25;
 			};
 			class _xx_885th_DC15LEMKII_battery_high_blue
 			{
@@ -547,19 +602,24 @@ class CfgVehicles
 				name = "885th_Westarm5mkii_Ap_cell_blue";
 				count = 50;
 			};
-			class _xx_885th_DX36C_battery_yellow_high
+			class _xx_885th_dx36c_cell
 			{
-				name = "885th_DX36C_battery_yellow_high";
-				count = 50;
+				name = "885th_dx36c_cell";
+				count = 35;
+			};
+			class _xx_885th_dx36c_cell
+			{
+				name = "885th_dx36c_cell";
+				count = 20;
+			};
+			class _xx_885th_firespitter_cell
+			{
+				name = "885th_firespitter_cell";
+				count = 20;
 			};
 			class _xx_3AS_FusionCutter_Magazine
 			{
 				name = "3AS_FusionCutter_Magazine";
-				count = 25;
-			};
-			class _xx_885th_DC15P_High_Blue
-			{
-				name = "885th_DC15P_High_Blue";
 				count = 25;
 			};
 			class _xx_JLTS_clone_comlink
