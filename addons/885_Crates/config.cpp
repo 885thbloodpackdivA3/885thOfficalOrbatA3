@@ -613,6 +613,7 @@ class CfgVehicles
 				count = 15;
 			};
 			class _xx_885th_dc15lmkii_short_cell
+			{
 				name = "885th_dc15lmkii_short_cell";
 				count = 30;
 			};
