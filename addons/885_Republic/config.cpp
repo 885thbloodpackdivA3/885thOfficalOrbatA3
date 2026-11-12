@@ -191,16 +191,4 @@ class CfgVehicles {
 		maximumLoad=0;
 		mass = 15;
 	};
-    class 885th_medic_Jumppack : JLTS_Clone_jumppack_mc {
-		author="AifeSupport";
-        displayName="[885th] Emergency Descent Pack - Medical";
-        JLTS_isJumppack=0;
-		sc_jumppack=1;
-		sc_particles[]=
-		{
-			{0,-0.3,-0.1}
-		};
-		maximumLoad=200;
-		mass = 15;
-	};
 };
