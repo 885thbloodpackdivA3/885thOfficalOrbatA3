@@ -581,6 +581,11 @@ BPD_whitelist = [
     "Scorch_Kusak_Katarn_Helm",
     "Titan_Kusak_Katarn_Helm",
     "Warper_AB_Helm",
+    "885th_Fyrnock_QRF_Air_Helm",
+    "885th_Nexu_QRF_Air_Helm",
+    "885th_Fyrnock_QRF_P2_Helm",
+    "885th_Nexu_QRF_P2_Helm",
+    "885th_Bullets_P2_Helmet",
 
     // ---------------- Uniforms (43) ----------------
     "885th_AdvRecon_Uniform",
@@ -627,6 +632,8 @@ BPD_whitelist = [
     "885th_Vornskr_Uniform",
     "885th_Vornskr_VCT_Uniform",
     "885th_Maverick_Uniform",
+    "885th_Fyrnock_QRF_Uniform",
+    "885th_Nexu_QRF_Uniform",
 
     // ---------------- Vests (77) ----------------
     "885th_Clone_Holster",
@@ -758,6 +765,8 @@ BPD_whitelist = [
     "ls_gar_glidepackClosedLR_backpack",
     "ls_gar_hawkbat_backpack",
     "ls_vehicle_turretDroid_packed",
+    "885th_Fyrnock_Cdv",
+    "885th_Nexu_Cdv",
 
     // ---------------- Facewear / NVGs / HUDs (76) ----------------
     "3AS_G_Engineer_1_F",
@@ -836,6 +845,7 @@ BPD_whitelist = [
     "SWLB_CEE_Clone_Scarf_Stewart",
     "SWLB_CEE_Clone_Scarf_White",
     "SWLB_clone_rangefinder_HUD",
+    "885th_Nightfall_Visor",
 
     // ---------------- Medical (99) ----------------
     "ACE_bloodIV",
