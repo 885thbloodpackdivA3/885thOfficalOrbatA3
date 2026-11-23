@@ -1215,13 +1215,11 @@ class CfgVehicles
         uniformClass = "TAS_DroidB1_Pilot";
     };
 
-    // Mk I B2: Legion Studios B2 with 885th hit points (no WebKnight).
-    class ls_droid_base;
-    class ls_droid_b2: ls_droid_base
-    {
-        class HitPoints;
-    };
-    class 885th_CIS_droid_B2 : ls_droid_b2
+    // B2 (Mk I and Mk II): built on WebKnight's LS B2 so WBK treats it as a B2 (B2 health pool,
+    // animations, sounds). WBK's B2 init hook is inherited from WBK_LS_B2_Baseclass.
+    // Damage is handled by WBK (CBA setting "B2 Health"), so no HitPoints overrides here.
+    class WBK_LS_B2;
+    class 885th_CIS_droid_B2 : WBK_LS_B2
     {
         displayName = "B2 Super Battledroid";
         author = "AifeSupport";
@@ -1232,183 +1230,11 @@ class CfgVehicles
         EditorSubcategory = "Sub885thCISDroids";
         genericNames = "ls_droid_b1";
         identityTypes[] = {"ls_b1BattleDroid", "O_3AS_head_F"};
-        class HitPoints: HitPoints
-		{
-			class HitFace
-			{
-				armor=10;
-				material=-1;
-				name="face_hub";
-				passThrough=0.80000001;
-				radius=0.079999998;
-				explosionShielding=0.1;
-				minimalHit=0.0099999998;
-			};
-			class HitNeck: HitFace
-			{
-				armor=15;
-				material=-1;
-				name="neck";
-				passThrough=0.80000001;
-				radius=0.1;
-				explosionShielding=0.5;
-				minimalHit=0.0099999998;
-			};
-			class HitHead: HitNeck
-			{
-				armor=15;
-				material=-1;
-				name="head";
-				passThrough=0.80000001;
-				radius=0.2;
-				explosionShielding=0.5;
-				minimalHit=0.0099999998;
-				depends="HitFace max HitNeck";
-			};
-			class HitPelvis: HitHead
-			{
-				armor=15;
-				material=-1;
-				name="pelvis";
-				passThrough=0.80000001;
-				radius=0.23999999;
-				explosionShielding=4;
-				visual="injury_body";
-				minimalHit=0.0099999998;
-				depends="0";
-			};
-			class HitAbdomen: HitPelvis
-			{
-				armor=14;
-				material=-1;
-				name="spine1";
-				passThrough=0.80000001;
-				radius=0.2;
-				explosionShielding=4;
-				visual="injury_body";
-				minimalHit=0.0099999998;
-			};
-			class HitDiaphragm: HitAbdomen
-			{
-				armor=14;
-				material=-1;
-				name="spine2";
-				passThrough=0.80000001;
-				radius=0.18000001;
-				explosionShielding=4;
-				visual="injury_body";
-				minimalHit=0.0099999998;
-			};
-			class HitChest: HitDiaphragm
-			{
-				armor=16;
-				material=-1;
-				name="spine3";
-				passThrough=0.80000001;
-				radius=0.2;
-				explosionShielding=6;
-				visual="injury_body";
-				minimalHit=0.0099999998;
-			};
-			class HitSensor: HitChest
-			{
-				armor=6;
-				radius=0.1;
-				name="sensor_hit";
-			};
-			/*class HitBody: HitChest
-			{
-				armor=13;
-				material=-1;
-				name="body";
-				passThrough=1;
-				explosionShielding=2;
-				radius=0.15;
-				visual="injury_body";
-				minimalHit=0.0099999998;
-				//depends="HitPelvis max HitAbdomen max HitDiaphragm max HitChest";
-			};*/
-			class HitArms: HitChest
-			{
-				armor=10;
-				material=-1;
-				name="arms";
-				passThrough=1;
-				radius=0.16;
-				explosionShielding=3;
-				visual="injury_hands";
-				minimalHit=0.0099999998;
-				depends="0";
-			};
-			class HitHands: HitArms
-			{
-				armor=10;
-				material=-1;
-				name="hands";
-				passThrough=1;
-				radius=0.1;
-				explosionShielding=3;
-				visual="injury_hands";
-				minimalHit=0.0099999998;
-				depends="HitArms";
-			};
-			class HitLegs: HitHands
-			{
-				armor=10;
-				material=-1;
-				name="legs";
-				passThrough=1;
-				radius=0.14;
-				explosionShielding=5;
-				visual="injury_legs";
-				minimalHit=0.0099999998;
-				depends="0";
-			};
-			class Incapacitated: HitLegs
-			{
-				armor=50;
-				material=-1;
-				name="body";
-				passThrough=1;
-				radius=0;
-				explosionShielding=1;
-				visual="";
-				minimalHit=0;
-				depends="(((Total - 0.25) max 0) + ((HitHead - 0.25) max 0) + ((HitBody - 0.25) max 0)) * 2";
-			};
-			class HitLeftArm
-			{
-				armor=20;
-				material=-1;
-				name="hand_l";
-				passThrough=1;
-				radius=0.079999998;
-				explosionShielding=2;
-				visual="injury_hands";
-				minimalHit=0.0099999998;
-			};
-			class HitRightArm: HitLeftArm
-			{
-				name="hand_r";
-				armor=20;
-			};
-			class HitLeftLeg
-			{
-				armor=20;
-				material=-1;
-				name="leg_l";
-				passThrough=1;
-				radius=0.1;
-				explosionShielding=2;
-				visual="injury_legs";
-				minimalHit=0.0099999998;
-			};
-			class HitRightLeg: HitLeftLeg
-			{
-				name="leg_r";
-			};
-		};
-
+        // Same Legion Studios B2 model the unit used before
+        uniformClass = "ls_droidUniform_b2";
+        model = "\ls\core\addons\characters_droid\uniforms\b2\ls_uniform_droid_b2.p3d";
+        hiddenSelections[] = {"camo_arms","legs","torso"};
+        hiddenSelectionsTextures[] = {"\ls\core\addons\characters_droid\uniforms\b2\data\arms_co.paa","\ls\core\addons\characters_droid\uniforms\b2\data\legs_co.paa","\ls\core\addons\characters_droid\uniforms\b2\data\torso_co.paa"};
         Items[] = {"ACE_EarPlugs", "ACE_EntrenchingTool", MAG_10("IDA_BactaBandage"), MAG_5("ACE_tourniquet"), MAG_4("ACE_Splint"), "ACE_PlasmaIV_500", MAG_2("IDA_BattleStim"), MAG_4("ACE_CableTie"), "acc_flashlight"};
         RespawnItems[] = {"ACE_EarPlugs", "ACE_EntrenchingTool", MAG_10("IDA_BactaBandage"), MAG_5("ACE_tourniquet"), MAG_4("ACE_Splint"), "ACE_PlasmaIV_500", MAG_2("IDA_BattleStim"), MAG_4("ACE_CableTie"), "acc_flashlight"};
 
@@ -1538,37 +1364,10 @@ class CfgVehicles
         BPD_droidHealth = 150;   // WBK health (normal B1 = CBA setting "B1 Health", default 50)
     };
 
-    // Mk II B2: built on WebKnight's LS B2 so WBK treats it as a B2 (B2 health pool,
-    // animations, sounds). WBK's B2 init hook is inherited from WBK_LS_B2_Baseclass.
-    // Damage is handled by WBK (CBA setting "B2 Health"), so no HitPoints overrides here.
-    class WBK_LS_B2;
-    class 885th_CIS_MkII_droid_B2 : WBK_LS_B2
+    // Mk II B2: same as the Mk I B2, plus the Mk II aggressive / Vcom setup
+    class 885th_CIS_MkII_droid_B2 : 885th_CIS_droid_B2
     {
-        displayName = "B2 Super Battledroid";
-        author = "AifeSupport";
-        scope = 2;
-        scopeCurator = 2;
-        side = 0;
-        faction = "o_cis";
         EditorSubcategory = "Sub885thCISDroidsMkII";
-        genericNames = "ls_droid_b1";
-        identityTypes[] = {"ls_b1BattleDroid", "O_3AS_head_F"};
-        // Same Legion Studios B2 model as the Mk I B2
-        uniformClass = "ls_droidUniform_b2";
-        model = "\ls\core\addons\characters_droid\uniforms\b2\ls_uniform_droid_b2.p3d";
-        hiddenSelections[] = {"camo_arms","legs","torso"};
-        hiddenSelectionsTextures[] = {"\ls\core\addons\characters_droid\uniforms\b2\data\arms_co.paa","\ls\core\addons\characters_droid\uniforms\b2\data\legs_co.paa","\ls\core\addons\characters_droid\uniforms\b2\data\torso_co.paa"};
-        Items[] = {"ACE_EarPlugs", "ACE_EntrenchingTool", MAG_10("IDA_BactaBandage"), MAG_5("ACE_tourniquet"), MAG_4("ACE_Splint"), "ACE_PlasmaIV_500", MAG_2("IDA_BattleStim"), MAG_4("ACE_CableTie"), "acc_flashlight"};
-        RespawnItems[] = {"ACE_EarPlugs", "ACE_EntrenchingTool", MAG_10("IDA_BactaBandage"), MAG_5("ACE_tourniquet"), MAG_4("ACE_Splint"), "ACE_PlasmaIV_500", MAG_2("IDA_BattleStim"), MAG_4("ACE_CableTie"), "acc_flashlight"};
-
-        linkedItems[] = {"885th_vest_base", "ItemMap", "ItemGPS", "JLTS_droid_comlink", "ItemCompass", "ItemWatch","JLTS_NVG_droid_chip_2"};
-        respawnlinkedItems[] = {"885th_vest_base", "ItemMap", "ItemGPS", "JLTS_droid_comlink", "ItemCompass", "ItemWatch","JLTS_NVG_droid_chip_2"};
-        backpack = "885th_Vornskr_Backpack_invis";
-
-        weapons[] = {"885th_WristBlaster"};
-        respawnWeapons[] = {"885th_WristBlaster"};
-        magazines[] = {MAG_10("885th_e_battery_red_high"), MAG_6("IDA_wrist_rocket")};
-        respawnMagazines[] = {MAG_10("885th_e_battery_red_high"), MAG_6("IDA_wrist_rocket")};
     };
 
     class 885th_CIS_MkII_droid_BX_commando : 885th_CIS_droid_BX_commando
@@ -1765,7 +1564,8 @@ class CfgVehicles
 
 // ---------------------------------------------------------------------------
 //  Init hooks
-//  Mk I  : plain AI (Vcom/LAMBS as normal), no WebKnight.
+//  Mk I  : plain AI (Vcom/LAMBS as normal), no WebKnight - except the B2,
+//          which is the WBK-based B2 in both Mk I and Mk II.
 //  Mk II : WebKnight Droids (animations, voice lines, WBK health) + aggressive
 //          AI that works with Vcom (BPD_fnc_cisMkIIInit).
 //  All   : no-prone, done by one cheap per-machine handler (BPD_fnc_cisNoProne)
@@ -1800,10 +1600,9 @@ class Extended_InitPost_EventHandlers
         };
         CIS_MKII_AI;
     };
-    // Mk II B2 (WBK is started by WBK_LS_B2's own hook)
+    // Mk II B2 (WBK is started by WBK_LS_B2's own hook; no-prone comes from the B2 entry above)
     class 885th_CIS_MkII_droid_B2
     {
-        CIS_NO_PRONE;
         CIS_MKII_AI;
     };
     // Mk II BX
