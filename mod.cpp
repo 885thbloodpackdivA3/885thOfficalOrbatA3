@@ -1,0 +1,10 @@
+name = "885th Bloodpack Division Campaign Orbat";
+author = "AifeSupport";
+logo = "files\icon.paa";
+logoOver = "files\icon.paa";
+tooltipOwned = "885th ORBAT mod; defines enemy compositions and equipment.";
+picture = "";
+overview = "885th ORBAT mod; defines enemy compositions and equipment.";
+hideName = 0;
+hidePicture = 1;
+logoSmall = "files\iconSmall.paa";
