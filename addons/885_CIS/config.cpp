@@ -23,7 +23,6 @@ class CfgPatches
             "885th_CIS_droid_sniper",
             "885th_CIS_droid_BX_sniper",
             "885th_CIS_droid_BX_commando",
-            "885th_CIS_droid_B2",
             "885th_CIS_MkII_droid",
             "885th_CIS_MkII_droid_repeater",
             "885th_CIS_MkII_droid_sniper",
@@ -70,6 +69,7 @@ class CfgFunctions
             file = "885_CIS\functions";
             class cisNoProne {};
             class cisMkIIInit {};
+            class cisSmokeAccuracy {};
         };
     };
 };
@@ -354,7 +354,7 @@ class CfgGroups
                         position[] = {5, -5, 0};
                         rank = "SERGEANT";
                         side = 0;
-                        vehicle = "885th_CIS_droid_B2";
+                        vehicle = "885th_CIS_droid_repeater";   // was the B2 (B2 is Mk II only now)
                     };
                     class Unit2
                     {
@@ -1215,38 +1215,6 @@ class CfgVehicles
         uniformClass = "TAS_DroidB1_Pilot";
     };
 
-    // B2 (Mk I and Mk II): built on WebKnight's LS B2 so WBK treats it as a B2 (B2 health pool,
-    // animations, sounds). WBK's B2 init hook is inherited from WBK_LS_B2_Baseclass.
-    // Damage is handled by WBK (CBA setting "B2 Health"), so no HitPoints overrides here.
-    class WBK_LS_B2;
-    class 885th_CIS_droid_B2 : WBK_LS_B2
-    {
-        displayName = "B2 Super Battledroid";
-        author = "AifeSupport";
-        scope = 2;
-        scopeCurator = 2;
-        side = 0;
-        faction = "o_cis";
-        EditorSubcategory = "Sub885thCISDroids";
-        genericNames = "ls_droid_b1";
-        identityTypes[] = {"ls_b1BattleDroid", "O_3AS_head_F"};
-        // Same Legion Studios B2 model the unit used before
-        uniformClass = "ls_droidUniform_b2";
-        model = "\ls\core\addons\characters_droid\uniforms\b2\ls_uniform_droid_b2.p3d";
-        hiddenSelections[] = {"camo_arms","legs","torso"};
-        hiddenSelectionsTextures[] = {"\ls\core\addons\characters_droid\uniforms\b2\data\arms_co.paa","\ls\core\addons\characters_droid\uniforms\b2\data\legs_co.paa","\ls\core\addons\characters_droid\uniforms\b2\data\torso_co.paa"};
-        Items[] = {"ACE_EarPlugs", "ACE_EntrenchingTool", MAG_10("IDA_BactaBandage"), MAG_5("ACE_tourniquet"), MAG_4("ACE_Splint"), "ACE_PlasmaIV_500", MAG_2("IDA_BattleStim"), MAG_4("ACE_CableTie"), "acc_flashlight"};
-        RespawnItems[] = {"ACE_EarPlugs", "ACE_EntrenchingTool", MAG_10("IDA_BactaBandage"), MAG_5("ACE_tourniquet"), MAG_4("ACE_Splint"), "ACE_PlasmaIV_500", MAG_2("IDA_BattleStim"), MAG_4("ACE_CableTie"), "acc_flashlight"};
-
-        linkedItems[] = {"885th_vest_base", "ItemMap", "ItemGPS", "JLTS_droid_comlink", "ItemCompass", "ItemWatch","JLTS_NVG_droid_chip_2"};
-        respawnlinkedItems[] = {"885th_vest_base", "ItemMap", "ItemGPS", "JLTS_droid_comlink", "ItemCompass", "ItemWatch","JLTS_NVG_droid_chip_2"};
-        backpack = "885th_Vornskr_Backpack_invis";
-
-        weapons[] = {"885th_WristBlaster"};
-        respawnWeapons[] = {"885th_WristBlaster"};
-        magazines[] = {MAG_10("885th_e_battery_red_high"), MAG_6("IDA_wrist_rocket")};
-        respawnMagazines[] = {MAG_10("885th_e_battery_red_high"), MAG_6("IDA_wrist_rocket")};
-    };
 
     class 885th_CIS_droid_BX_commando : ls_droid_bx
     {
@@ -1357,17 +1325,46 @@ class CfgVehicles
         hiddenSelectionsTextures[] = {"\MRC\JLTS\characters\DroidArmor\data\b1_prototype_co.paa"};
         editorPreview = "\MRC\JLTS\characters\DroidArmor\data\ui\editorPreviews\JLTS_Droid_B1_Prototype.jpg";
         backpack = "JLTS_B1_backpack_prototype";
-        weapons[] = {"885th_E5C"};
-        respawnWeapons[] = {"885th_E5C"};
+        weapons[] = {"885th_E5"};
+        respawnWeapons[] = {"885th_E5"};
         magazines[] = {MAG_10("885th_e_cell_red"), MAG_2("IDA_grenade_Smoke_mag"), MAG_2("IDA_grenade_Detonator_mag")};
         respawnMagazines[] = {MAG_10("885th_e_cell_red"), MAG_2("IDA_grenade_Smoke_mag"), MAG_2("IDA_grenade_Detonator_mag")};
         BPD_droidHealth = 150;   // WBK health (normal B1 = CBA setting "B1 Health", default 50)
     };
 
-    // Mk II B2: same as the Mk I B2, plus the Mk II aggressive / Vcom setup
-    class 885th_CIS_MkII_droid_B2 : 885th_CIS_droid_B2
+    // Mk II B2: built on WebKnight's LS B2 so WBK treats it as a B2 (B2 health pool,
+    // animations, sounds). WBK's B2 init hook is inherited from WBK_LS_B2_Baseclass.
+    // Damage is handled by WBK (CBA setting "B2 Health"), so no HitPoints overrides here.
+    // Look matches Legion Studios' own B2 (ls_droid_b2): same model, textures and editor
+    // preview, and no vest (the old 885th clone vest showed on the droid).
+    class WBK_LS_B2;
+    class 885th_CIS_MkII_droid_B2 : WBK_LS_B2
     {
+        displayName = "B2 Super Battledroid";
+        author = "AifeSupport";
+        scope = 2;
+        scopeCurator = 2;
+        side = 0;
+        faction = "o_cis";
         EditorSubcategory = "Sub885thCISDroidsMkII";
+        genericNames = "ls_droid_b2";
+        identityTypes[] = {"ls_b1BattleDroid", "O_3AS_head_F"};
+        uniformClass = "ls_droidUniform_b2";
+        model = "\ls\core\addons\characters_droid\uniforms\b2\ls_uniform_droid_b2.p3d";
+        editorPreview = "\ls\core\addons\characters_droid\data\ui\editorPreviews\ls_droid_b2.jpg";
+        hiddenSelections[] = {"camo_arms","legs","torso"};
+        hiddenSelectionsTextures[] = {"\ls\core\addons\characters_droid\uniforms\b2\data\arms_co.paa","\ls\core\addons\characters_droid\uniforms\b2\data\legs_co.paa","\ls\core\addons\characters_droid\uniforms\b2\data\torso_co.paa"};
+        Items[] = {"ACE_EarPlugs", "ACE_EntrenchingTool", MAG_10("IDA_BactaBandage"), MAG_5("ACE_tourniquet"), MAG_4("ACE_Splint"), "ACE_PlasmaIV_500", MAG_2("IDA_BattleStim"), MAG_4("ACE_CableTie"), "acc_flashlight"};
+        RespawnItems[] = {"ACE_EarPlugs", "ACE_EntrenchingTool", MAG_10("IDA_BactaBandage"), MAG_5("ACE_tourniquet"), MAG_4("ACE_Splint"), "ACE_PlasmaIV_500", MAG_2("IDA_BattleStim"), MAG_4("ACE_CableTie"), "acc_flashlight"};
+
+        linkedItems[] = {"ItemMap", "ItemGPS", "JLTS_droid_comlink", "ItemCompass", "ItemWatch","JLTS_NVG_droid_chip_2"};
+        respawnlinkedItems[] = {"ItemMap", "ItemGPS", "JLTS_droid_comlink", "ItemCompass", "ItemWatch","JLTS_NVG_droid_chip_2"};
+        backpack = "885th_Vornskr_Backpack_invis";
+
+        weapons[] = {"885th_WristBlaster"};
+        respawnWeapons[] = {"885th_WristBlaster"};
+        magazines[] = {MAG_10("885th_e_battery_red_high"), MAG_6("IDA_wrist_rocket")};
+        respawnMagazines[] = {MAG_10("885th_e_battery_red_high"), MAG_6("IDA_wrist_rocket")};
     };
 
     class 885th_CIS_MkII_droid_BX_commando : 885th_CIS_droid_BX_commando
@@ -1564,8 +1561,7 @@ class CfgVehicles
 
 // ---------------------------------------------------------------------------
 //  Init hooks
-//  Mk I  : plain AI (Vcom/LAMBS as normal), no WebKnight - except the B2,
-//          which is the WBK-based B2 in both Mk I and Mk II.
+//  Mk I  : plain AI (Vcom/LAMBS as normal), no WebKnight. No B2 (Mk II only).
 //  Mk II : WebKnight Droids (animations, voice lines, WBK health) + aggressive
 //          AI that works with Vcom (BPD_fnc_cisMkIIInit).
 //  All   : no-prone, done by one cheap per-machine handler (BPD_fnc_cisNoProne)
@@ -1573,6 +1569,7 @@ class CfgVehicles
 // ---------------------------------------------------------------------------
 #define CIS_NO_PRONE class 885th_CIS_NoProne { init = "[_this select 0] call BPD_fnc_cisNoProne;"; }
 #define CIS_MKII_AI  class 885th_CIS_MkII_AI { init = "[_this select 0] call BPD_fnc_cisMkIIInit;"; }
+#define CIS_SMOKE_ACC class 885th_CIS_SmokeAcc { init = "[_this select 0] call BPD_fnc_cisSmokeAccuracy;"; }
 
 class Extended_InitPost_EventHandlers
 {
@@ -1580,10 +1577,13 @@ class Extended_InitPost_EventHandlers
     class 885th_CIS_droid
     {
         CIS_NO_PRONE;
+        CIS_SMOKE_ACC;   // B1s only: smoke between droid and target ruins its aim until re-acquired
     };
-    class 885th_CIS_droid_B2
+    // Mk II B2
+    class 885th_CIS_MkII_droid_B2
     {
         CIS_NO_PRONE;
+        CIS_MKII_AI;
     };
     // Mk I BX and Mk II BX (inherits it)
     class 885th_CIS_droid_BX_commando
@@ -1598,11 +1598,6 @@ class Extended_InitPost_EventHandlers
         {
             init = "params ['_unit']; if (local _unit && {!isNil 'WBK_Droid_B1_Load'}) then {_unit spawn WBK_Droid_B1_Load;};";
         };
-        CIS_MKII_AI;
-    };
-    // Mk II B2 (WBK is started by WBK_LS_B2's own hook; no-prone comes from the B2 entry above)
-    class 885th_CIS_MkII_droid_B2
-    {
         CIS_MKII_AI;
     };
     // Mk II BX
