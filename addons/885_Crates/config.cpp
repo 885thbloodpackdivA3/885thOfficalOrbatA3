@@ -622,16 +622,6 @@ class CfgVehicles
 				name = "885th_Westarm5mkii_Ap_cell_blue";
 				count = 50;
 			};
-			class _xx_885th_dx36c_cell
-			{
-				name = "885th_dx36c_cell";
-				count = 35;
-			};
-			class _xx_885th_dx36c_cell_he
-			{
-				name = "885th_dx36c_cell_he";
-				count =10;
-			};
 			class _xx_885th_firespitter_cell
 			{
 				name = "885th_firespitter_cell";
