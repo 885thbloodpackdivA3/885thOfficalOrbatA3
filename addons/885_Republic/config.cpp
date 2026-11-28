@@ -22,7 +22,7 @@ class CfgPatches {
         };
         weapons[] = {};
         requiredVersion = 1.62;
-        requiredAddons[] = {};
+        requiredAddons[] = {"885th_Armor","885th_Units","885th_Weapons","885th_EX_Weapons"};
         author = "AifeSupport";
     };
 };
@@ -79,12 +79,12 @@ class CfgVehicles {
         uniformClass = "SWLB_CEE_Senate_Commando_Trooper_Uniform";
         linkedItems[] = {"IDA_vest_base","SWLB_CEE_Senate_Commando_Trooper_Helmet","ItemMap","SWLB_comlink","ItemCompass","ItemWatch"};
         respawnlinkedItems[] = {"IDA_vest_base","SWLB_CEE_Senate_Commando_Trooper_Helmet","ItemMap","SWLB_comlink","ItemCompass","ItemWatch"};
-        weapons[] = {"IDA_DC17M","885th_DC17","Throw","Put"};
-        respawnWeapons[] = {"IDA_DC17M","885th_DC17","Throw","Put"};
+        weapons[] = {"885th_DC15AMKII_F","885th_DC17","Throw","Put"};
+        respawnWeapons[] = {"885th_DC15AMKII_F","885th_DC17","Throw","Put"};
         Items[] = {"ACE_EntrenchingTool",MAG_10("IDA_BactaBandage"),MAG_5("ACE_tourniquet"),MAG_4("ACE_Splint"),"ACE_PlasmaIV_500",MAG_2("IDA_BattleStim"),MAG_4("ACE_CableTie"),"acc_flashlight"};
 		RespawnItems[] = {"ACE_EntrenchingTool",MAG_10("IDA_BactaBandage"),MAG_5("ACE_tourniquet"),MAG_4("ACE_Splint"),"ACE_PlasmaIV_500",MAG_2("IDA_BattleStim"),MAG_4("ACE_CableTie"),"acc_flashlight"};
-		magazines[] = {MAG_5("IDA_dc17m_standard_mag"),MAG_4("885th_dc_cell_blue_pistol"),MAG_3("IDA_grenade_Smoke_mag"),"IDA_grenade_Detonator_mag"};
-		respawnMagazines[] = {MAG_5("IDA_dc17m_standard_mag"),MAG_10("885th_dc_cell_blue_low"),MAG_10("885th_dc_cell_blue"),MAG_4("885th_dc_cell_blue_pistol"),MAG_3("IDA_grenade_Smoke_mag"),"IDA_grenade_Detonator_mag"};
+		magazines[] = {MAG_8("885th_dc15a_hp_cell"),MAG_4("885th_dc17_cell"),MAG_3("IDA_grenade_Smoke_mag"),"IDA_grenade_Detonator_mag"};
+		respawnMagazines[] = {MAG_8("885th_dc15a_hp_cell"),MAG_4("885th_dc17_cell"),MAG_3("IDA_grenade_Smoke_mag"),"IDA_grenade_Detonator_mag"};
 		backpack = "SWLB_clone_backpack_predef_heavy";
 	};
 	class 885th_republic_senator : ls_civ_mirialan_m_officer {
@@ -121,10 +121,10 @@ class CfgVehicles {
 		respawnWeapons[] = {"885th_DC15S","885th_DC17","Throw","Put"};
         Items[] = {"ACE_EarPlugs","ACE_EntrenchingTool",MAG_10("IDA_BactaBandage"),MAG_5("ACE_tourniquet"),MAG_4("ACE_Splint"),"ACE_PlasmaIV_500",MAG_2("IDA_BattleStim"),MAG_4("ACE_CableTie"),"acc_flashlight"};
 		RespawnItems[] = {"ACE_EarPlugs","ACE_EntrenchingTool",MAG_10("IDA_BactaBandage"),MAG_5("ACE_tourniquet"),MAG_4("ACE_Splint"),"ACE_PlasmaIV_500",MAG_2("IDA_BattleStim"),MAG_4("ACE_CableTie"),"acc_flashlight"};
-		magazines[] = {MAG_10("885th_dc_cell_blue_low"),MAG_4("885th_dc_cell_blue_pistol"),MAG_3("IDA_grenade_Smoke_mag"),"IDA_grenade_Detonator_mag"};
-		respawnMagazines[] = {MAG_10("885th_dc_cell_blue_low"),MAG_4("885th_dc_cell_blue_pistol"),MAG_3("IDA_grenade_Smoke_mag"),"IDA_grenade_Detonator_mag"};
-		linkedItems[] = {"lsd_orsf_trooper_vest","ItemMap","ItemGPS","ItemCompass","ItemWatch","JLTS_clone_comlink","JLTS_CloneBinocular"};
-		respawnLinkedItems[] = {"lsd_orsf_trooper_vest","ItemMap","ItemGPS","ItemCompass","ItemWatch","JLTS_clone_comlink","JLTS_CloneBinocular"};
+		magazines[] = {MAG_8("885th_dc15s_cell"),MAG_4("885th_dc17_cell"),MAG_3("IDA_grenade_Smoke_mag"),"IDA_grenade_Detonator_mag"};
+		respawnMagazines[] = {MAG_8("885th_dc15s_cell"),MAG_4("885th_dc17_cell"),MAG_3("IDA_grenade_Smoke_mag"),"IDA_grenade_Detonator_mag"};
+		linkedItems[] = {"lsd_orsf_trooper_vest","ItemMap","ItemGPS","ItemCompass","ItemWatch","885th_clone_comlink","JLTS_CloneBinocular"};
+		respawnLinkedItems[] = {"lsd_orsf_trooper_vest","ItemMap","ItemGPS","ItemCompass","ItemWatch","885th_clone_comlink","JLTS_CloneBinocular"};
 
         backpack = "lsd_orsf_PREDEF_standard_backpack";
     };
@@ -136,8 +136,8 @@ class CfgVehicles {
         side = 1;
         faction = "885th_Faction";
 		EditorSubcategory = "Sub885thRepublicTroops";
-		weapons[] += {"IDA_RPS6_Disposable"};
-		respawnWeapons[] += {"IDA_RPS6_Disposable"};
+		weapons[] += {"885th_RPS6_Dispo"};
+		respawnWeapons[] += {"885th_RPS6_Dispo"};
     };
 	class 885th_republic_pilot : 885th_republic_trooper {
         author = "AifeSupport";
@@ -153,8 +153,8 @@ class CfgVehicles {
 		
 		weapons[] = {"885th_DC17","Throw","Put"};
 		respawnWeapons[] = {"885th_DC17","Throw","Put"};
-		magazines[] = {MAG_4("885th_dc_cell_blue_pistol"),MAG_3("IDA_grenade_Smoke_mag"),"IDA_grenade_Detonator_mag"};
-		respawnMagazines[] = {MAG_4("885th_dc_cell_blue_pistol"),MAG_3("IDA_grenade_Smoke_mag"),"IDA_grenade_Detonator_mag"};
+		magazines[] = {MAG_4("885th_dc17_cell"),MAG_3("IDA_grenade_Smoke_mag"),"IDA_grenade_Detonator_mag"};
+		respawnMagazines[] = {MAG_4("885th_dc17_cell"),MAG_3("IDA_grenade_Smoke_mag"),"IDA_grenade_Detonator_mag"};
 		linkedItems[] += {"H_HeadSet_black_F"};
 		respawnLinkedItems[] += {"H_HeadSet_black_F"};
 
@@ -175,8 +175,8 @@ class CfgVehicles {
         respawnlinkedItems[] = {"V_Pocketed_black_F","H_PASGT_basic_blue_F","ItemMap","ItemRadio","ItemCompass","ItemWatch"};
         weapons[] = {"885th_DC15S"};
         respawnWeapons[] = {"885th_DC15S"};
-        magazines[] = {"885th_dc_cell_green","885th_dc_cell_green","885th_dc_cell_green","885th_dc_cell_green"};
-        respawnMagazines[] = {"885th_dc_cell_green","885th_dc_cell_green","885th_dc_cell_green","885th_dc_cell_green"};
+        magazines[] = {MAG_4("885th_dc15s_cell")};
+        respawnMagazines[] = {MAG_4("885th_dc15s_cell")};
 	};
     class JLTS_Clone_jumppack_mc;
 	class 885th_Jumppack : JLTS_Clone_jumppack_mc {
