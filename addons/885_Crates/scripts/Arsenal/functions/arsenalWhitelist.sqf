@@ -95,7 +95,7 @@ BPD_whitelist = [
     "IDA_A260P",
     "IDA_DC23",
 
-    // ---------------- Weapon Attachments (75) ----------------
+    // ---------------- Weapon Attachments (80) ----------------
     "3AS_bipod_DC15L_F",
     "3AS_bipod_DC15X_F",
     "3AS_bipod_VK38X_F",
@@ -171,8 +171,13 @@ BPD_whitelist = [
     "tsp_sling_1point",
     "tsp_sling_3point",
     "tsp_sling_lanyard",
+    "885th_Suppressor_Module_DC15_LowFlash",
+    "885th_Suppressor_Module_DC15_Stealth",
+    "885th_FlashHider_DC15",
+    "885th_DC15X_scope_BF2",
+    "885th_DC15X_scope_Heavy",
 
-    // ---------------- Magazines / Ammo (231) ----------------
+    // ---------------- Magazines / Ammo (233) ----------------
     "1Rnd_HE_Grenade_shell",
     "1Rnd_Smoke_Grenade_shell",
     "1Rnd_SmokeBlue_Grenade_shell",
@@ -404,6 +409,8 @@ BPD_whitelist = [
     "UGL_FlareRed_F",
     "UGL_FlareWhite_F",
     "UGL_FlareYellow_F",
+    "885th_dc15x_heavy_cell",
+    "885th_dc15x_am_cell",
 
     // ---------------- Grenades / Throwables (65) ----------------
     "3AS_SmokeBlue",
@@ -472,7 +479,7 @@ BPD_whitelist = [
     "SmokeShellYellow",
     "SquadShieldMagazine",
 
-    // ---------------- Explosives / Mines (17) ----------------
+    // ---------------- Explosives / Mines (24) ----------------
     "3AS_DetPack",
     "ACE_FlareTripMine_Mag",
     "ACE_FlareTripMine_Mag_Green",
@@ -490,8 +497,16 @@ BPD_whitelist = [
     "RTX_RemoteMagazine",
     "SWLW_clones_spec_demo_mag",
     "SWLW_DetPack_remote_mag",
+    "885th_explosive_lowYield_mag",
+    "885th_explosive_highYield_mag",
+    "885th_explosive_atDetpack_mag",
+    "885th_explosive_seismic_mag",
+    "885th_explosive_breach_mag",
+    "885th_explosive_demoPack_mag",
+    "885th_explosive_mineDispenser_mag",
+    
 
-    // ---------------- Helmets (89) ----------------
+    // ---------------- Helmets (88) ----------------
     "885th_AB_Helm",
     "885th_Ares_P2_ARF_Helm",
     "885th_BARC_Helm",
@@ -514,7 +529,7 @@ BPD_whitelist = [
     "885th_Fyrnock_Officer_P2_Helm",
     "885th_Fyrnock_P2_Helm",
     "885th_Fyrnock_VCT_P2_Helm",
-    "885th_Gooner_P2_Helmet",
+    "885th_Gooner_Scout_Helm",
     "885th_Jackson_P2_Helmet",
     "885th_Kit_phase2SpecOp_helmet",
     "885th_Kit_Pilot_Helm",
@@ -581,7 +596,7 @@ BPD_whitelist = [
     "885th_Nexu_QRF_P2_Helm",
     "885th_Bullets_P2_Helmet",
 
-    // ---------------- Uniforms (43) ----------------
+    // ---------------- Uniforms (48) ----------------
     "885th_AdvRecon_Uniform",
     "885th_Cerberus_Uniform",
     "885th_Charhound_Medic_Uniform",
@@ -628,6 +643,9 @@ BPD_whitelist = [
     "885th_Maverick_Uniform",
     "885th_Fyrnock_QRF_Uniform",
     "885th_Nexu_QRF_Uniform",
+    "885th_Ares_Uniform",
+    "885th_Charge_Uniform",
+
 
     // ---------------- Vests (77) ----------------
     "885th_Clone_Holster",
@@ -760,7 +778,7 @@ BPD_whitelist = [
     "885th_Fyrnock_Cdv",
     "885th_Nexu_Cdv",
 
-    // ---------------- Facewear / NVGs / HUDs (76) ----------------
+    // ---------------- Facewear / NVGs / HUDs (77) ----------------
     "3AS_G_Engineer_1_F",
     "3AS_G_Engineer_2_F",
     "3AS_G_Engineer_3_F",
@@ -837,6 +855,7 @@ BPD_whitelist = [
     "SWLB_CEE_Clone_Scarf_White",
     "SWLB_clone_rangefinder_HUD",
     "885th_Nightfall_Visor",
+    "885th_ARC_Rangefinder",
 
     // ---------------- Medical (99) ----------------
     "ACE_bloodIV",
@@ -939,7 +958,7 @@ BPD_whitelist = [
     "kat_X_AED",
     "Medikit",
 
-    // ---------------- Items / Tools / Radios (73) ----------------
+    // ---------------- Items / Tools / Radios (74) ----------------
     "885th_clone_comlink",
     "885th_operator_comlink",
     "ACE_Altimeter",
@@ -979,6 +998,7 @@ BPD_whitelist = [
     "ACE_Tripod",
     "ACE_UAVBattery",
     "ACE_wirecutter",
+    "ACE_Clacker",
     "B_UavTerminal",
     "C_UavTerminal",
     "crowsew_ctrack",
